@@ -20,6 +20,7 @@ Aplicación web construida con **Java** y **Spring Boot** que implementa una arq
 
 Flujo: `Navegador / Postman` → `ProductController` → `ProductService` → `ProductRepository` → `Map en memoria`.
 
+| Capa | Función |
 | :--- | :--- |
 | **Model (`Product.java`):** | Representa la estructura de datos de un producto, junto con su constructor vacío, constructor con parámetros y *getters*/*setters*. No maneja rutas web ni reglas de negocio. |
 | **Repository (`ProductRepository.java`):** | Anotada con `@Repository`, administra el almacenamiento temporal de datos en memoria usando un `LinkedHashMap<Long, Product>`, precarga los artículos iniciales, asigna el siguiente `id` y provee métodos de acceso a datos (`findAll`, `findById`, `save`). Al estar en memoria, los datos agregados se pierden al reiniciar la app. |
